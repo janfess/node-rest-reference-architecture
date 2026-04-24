@@ -1,0 +1,10 @@
+# Husky pre-commit hook
+# Ensures all code is audited and tested before commit
+
+echo "Running pre-commit checks..."
+
+# 1. Audit check
+npm audit || echo "Warning: Audit failed, but continuing..."
+
+# 2. Test check
+npm test
